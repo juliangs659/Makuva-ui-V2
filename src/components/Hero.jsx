@@ -2,22 +2,26 @@ import React, { useState, useEffect } from 'react';
 import '../assets/styles/Hero.css';
 
 const backgroundImages = [
-  'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1200&h=600&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1564596823821-78fac1bc83a1?q=80&w=1200&h=600&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=1200&h=600&auto=format&fit=crop',
+  'https://atlasnetviaxcom.blob.core.windows.net/atlas-multimedia-hpvuy/SURAMERICA/COLOMBIA/Cartagena/Cartagena%20DESTINO4.jpg',
+  'https://atlasnetviaxcom.blob.core.windows.net/atlas-multimedia-hpvuy/SURAMERICA/COLOMBIA/Cartagena/Cartagena%20DESTINO1.webp',
+  'https://atlasnetviaxcom.blob.core.windows.net/atlas-multimedia-hpvuy/SURAMERICA/COLOMBIA/bogota/Bogota.jpg',
+  'https://atlasnetviaxcom.blob.core.windows.net/atlas-multimedia-hpvuy/SURAMERICA/COLOMBIA/Cartagena/Cartagena3.jpg',
 ];
 
 export default function Hero() {
   const [destination, setDestination] = useState('');
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [currentBgIndex, setCurrentBgIndex] = useState(() => Math.floor(Math.random() * backgroundImages.length));
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBgIndex((prevIndex) => (prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  if (backgroundImages.length === 0) return;
+  const interval = setInterval(() => {
+    setCurrentBgIndex((prevIndex) =>
+      prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+    );
+  }, 5000);
+  return () => clearInterval(interval);
+}, []);
 
   const handleSearch = (e) => {
     e.preventDefault();

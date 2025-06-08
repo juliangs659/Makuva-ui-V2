@@ -84,10 +84,30 @@
 .sidebar-container {
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 4.5rem;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .burger-menu {
-  display: none; /* Puedes activar para mobile */
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 200;
+  background: none;
+  border: none;
+  color: #ffb347;
+  font-size: 1.6rem;
+  transition: color 0.2s;
+}
+.burger-menu:hover {
+  color: #ff6a00;
 }
 
 @media (max-width: 900px) {

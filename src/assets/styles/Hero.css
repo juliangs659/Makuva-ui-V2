@@ -36,7 +36,7 @@
   position: relative;
   background: rgba(18, 12, 7, 0.2); /* Transparente y oscuro */
   backdrop-filter: blur(2px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   border-radius: 30px;
   z-index: 7;
   text-align: center;
@@ -51,7 +51,7 @@
   font-size: 5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.3), 0 4px 24px #ff6a00;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.3), 0 4px 24px #d18c5b;
 }
 .gradient-text {
   background: linear-gradient(90deg, #ffb347 0%, #ff6a00 100%);
@@ -61,8 +61,8 @@
   text-shadow: 2px 2px 8px rgba(255,106,0,0.25);
 }
 .hero-modern-content p {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 200;
   margin-bottom: 2rem;
   text-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
@@ -92,8 +92,7 @@
   outline: none;
   background: transparent;
   color: #fff;
-  font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .hero-search input::placeholder {
   color: #ffffff;

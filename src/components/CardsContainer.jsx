@@ -41,6 +41,16 @@ const cardsData = [
     author: 'Desconocido',
     days: 5,
     likes: 2
+  },
+  {
+    id: 5,
+    title: 'Ruta cafetera ',
+    image: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=400&q=80',
+    description: "Descubre los paisajes cafeteros de Colombia.",
+    location: "Manizales, Caldas",
+    author: "Juan Pérez",
+    days: 3,
+    likes: 124
   }
 ];
 

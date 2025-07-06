@@ -10,7 +10,7 @@ const ReviewCard = ({ rating, comment, user, location }) => {
           key={i} 
           className={`star ${i <= rating ? 'filled' : 'empty'}`}
         >
-          ⭐
+          {i <= rating ? '⭐' : '☆'}
         </span>
       );
     }

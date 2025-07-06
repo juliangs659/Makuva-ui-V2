@@ -90,7 +90,9 @@
 }
 
 .star.empty {
-  color: #e9ecef;
+  color: #6c757d;
+  opacity: 0.6;
+  font-size: 1.4rem;
 }
 
 .review-comment {

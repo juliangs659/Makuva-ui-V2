@@ -11,8 +11,8 @@ import Registro from "./pages/Registro";
 
 function AppContent() {
   const location = useLocation();
-  const hideNavRoutes = ['/login', '/registro', '/mis-rutas'];
-  const hideFooterRoutes = ['/login', '/registro', '/mis-rutas'];
+  const hideNavRoutes = ['/login', '/registro', '/mis-rutas', '/explorar'];
+  const hideFooterRoutes = ['/login', '/registro', '/mis-rutas', '/explorar'];
   
   const shouldHideNav = hideNavRoutes.includes(location.pathname);
   const shouldHideFooter = hideFooterRoutes.includes(location.pathname);

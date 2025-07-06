@@ -1,17 +1,60 @@
+import { useState } from 'react';
+import ExplorarHeader from '../components/ExplorarHeader';
+import SearchFilters from '../components/SearchFilters';
+import RoutesGrid from '../components/RoutesGrid';
+import LoadMoreButton from '../components/LoadMoreButton';
+import { useRouteFilters } from '../hooks/useRouteFilters';
+import { rutasDestacadas } from '../data/rutas';
+import '../assets/styles/Explorar.css';
+
 export default function Explorar() {
+  const [loadingMore, setLoadingMore] = useState(false);
+  
+  const {
+    searchTerm,
+    setSearchTerm,
+    selectedCategory,
+    setSelectedCategory,
+    selectedDifficulty,
+    setSelectedDifficulty,
+    selectedRegion,
+    setSelectedRegion,
+    showFilters,
+    setShowFilters,
+    filteredRoutes
+  } = useRouteFilters(rutasDestacadas);
+
+  const handleLoadMore = () => {
+    setLoadingMore(true);
+    // Simular carga de más rutas
+    setTimeout(() => {
+      setLoadingMore(false);
+    }, 1000);
+  };
+
   return (
-    <div style={{ padding: '80px 20px', textAlign: 'center' }}>
-      <h1>Explora Nuevas Aventuras</h1>
-      <p>Descubre increíbles rutas y destinos por toda Colombia</p>
-      <div style={{ marginTop: '40px' }}>
-        <h3>🔍 Próximamente:</h3>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
-          <li>🏔️ Filtros por tipo de aventura</li>
-          <li>📍 Búsqueda por ubicación</li>
-          <li>⭐ Filtros por calificación</li>
-          <li>📅 Disponibilidad por fechas</li>
-        </ul>
-      </div>
+    <div className="explorar-container">
+      <ExplorarHeader filteredCount={filteredRoutes.length} />
+      
+      <SearchFilters 
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        selectedDifficulty={selectedDifficulty}
+        setSelectedDifficulty={setSelectedDifficulty}
+        selectedRegion={selectedRegion}
+        setSelectedRegion={setSelectedRegion}
+        showFilters={showFilters}
+        setShowFilters={setShowFilters}
+      />
+
+      <RoutesGrid rutas={filteredRoutes} />
+
+      <LoadMoreButton 
+        onClick={handleLoadMore}
+        loading={loadingMore}
+      />
     </div>
   );
 }

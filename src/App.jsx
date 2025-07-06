@@ -1,22 +1,26 @@
-import Hero from "./components/Hero"
-import Nav from "./components/Nav"
-import Footer from "./components/Footer"
-import CardsContainer from "./components/CardsContainer"
-import HowItWorks from "./components/HowItWorks"
-import ReviewsContainer from "./components/ReviewsContainer"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Explorar from "./pages/Explorar";
+import MisRutas from "./pages/MisRutas";
+import Comunidad from "./pages/Comunidad";
+import Ayuda from "./pages/Ayuda";
 
 function App() {
-
   return (
-    <>
-    <Nav />
-    <Hero />
-    <CardsContainer />
-    <HowItWorks />
-    <ReviewsContainer />
-    <Footer />
-    </>
-  )
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/explorar" element={<Explorar />} />
+        <Route path="/mis-rutas" element={<MisRutas />} />
+        <Route path="/comunidad" element={<Comunidad />} />
+        <Route path="/ayuda" element={<Ayuda />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;

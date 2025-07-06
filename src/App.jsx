@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -9,26 +9,35 @@ import Ayuda from "./pages/Ayuda";
 import Login from "./pages/Login";
 import Registro from "./pages/Registro";
 
+function AppContent() {
+  const location = useLocation();
+  const hideNavRoutes = ['/login', '/registro', '/mis-rutas'];
+  const hideFooterRoutes = ['/login', '/registro', '/mis-rutas'];
+  
+  const shouldHideNav = hideNavRoutes.includes(location.pathname);
+  const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
+  
+  return (
+    <>
+      {!shouldHideNav && <Nav />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/explorar" element={<Explorar />} />
+        <Route path="/mis-rutas" element={<MisRutas />} />
+        <Route path="/comunidad" element={<Comunidad />} />
+        <Route path="/ayuda" element={<Ayuda />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+      </Routes>
+      {!shouldHideFooter && <Footer />}
+    </>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/registro" element={<Registro />} />
-        <Route path="/*" element={
-          <>
-            <Nav />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/explorar" element={<Explorar />} />
-              <Route path="/mis-rutas" element={<MisRutas />} />
-              <Route path="/comunidad" element={<Comunidad />} />
-              <Route path="/ayuda" element={<Ayuda />} />
-            </Routes>
-            <Footer />
-          </>
-        } />
-      </Routes>
+      <AppContent />
     </Router>
   );
 }

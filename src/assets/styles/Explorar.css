@@ -1,7 +1,12 @@
 /* Explorar Page Styles */
 .explorar-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: 
+    linear-gradient(135deg, rgba(248, 249, 250, 0.082) 0%, rgba(233, 236, 239, 0.288) 100%),
+    url('/explorarBackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 0;
 }
 
@@ -34,10 +39,11 @@
 
 /* Search Section */
 .search-section {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   padding: 25px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(233, 236, 239, 0.5);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -82,7 +88,7 @@
 }
 
 .filter-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #ffb347 0%, #ff6a00 100%);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -177,6 +183,11 @@
 /* Routes Section */
 .routes-section {
   padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.027);
+  backdrop-filter: blur(5px);
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
@@ -191,10 +202,11 @@
   font-weight: 700;
   color: #2c3e50;
   margin: 0;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .results-count {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #ffb347 0%, #ff6a00 100%);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -210,17 +222,20 @@
 }
 
 .route-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .route-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .popular-badge {
@@ -382,7 +397,7 @@
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(135deg, #e93701 0%, #f96538 100%);
   color: white;
 }
 
@@ -406,10 +421,12 @@
 .load-more-section {
   text-align: center;
   padding: 40px 25px;
+  margin: 20px;
+  border-radius: 20px;
 }
 
 .load-more-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #ffb347 0%, #ff6a00 100%);
   color: white;
   border: none;
   padding: 15px 40px;

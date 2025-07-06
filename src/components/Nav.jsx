@@ -26,7 +26,7 @@ export default function Nav() {
         <li><Link to="/explorar"><FontAwesomeIcon icon={faMagnifyingGlassLocation} /> Explorar</Link></li>
         <li><Link to="/ayuda"><FontAwesomeIcon icon={faCircleInfo} /> Ayuda</Link></li>
         <li><Link to="/comunidad"><FontAwesomeIcon icon={faHandshake} /> Comunidad</Link></li>
-        <button>Iniciar sesión</button>
+        <Link to="/login" className="login-button">Iniciar sesión</Link>
       </ul>
     </nav>
     </>

@@ -81,6 +81,26 @@
   transform: scale(1.05);
 }
 
+.login-button {
+  background: linear-gradient(90deg, #ffb347 0%, #ff6a00 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255,106,0,0.10);
+  text-decoration: none;
+}
+
+.login-button:hover {
+  background: linear-gradient(90deg, #ff6a00 0%, #ffb347 100%);
+  transform: scale(1.05);
+}
+
 .sidebar-container {
   display: flex;
   align-items: center;

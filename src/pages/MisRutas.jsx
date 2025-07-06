@@ -198,10 +198,10 @@ export default function MisRutas() {
       </div>
 
       {/* Botón flotante para crear ruta */}
-      <button className="fab">
+      <Link to="/crear-ruta" className="fab">
         <FontAwesomeIcon icon={faPlus} />
         <span>Nueva Ruta</span>
-      </button>
+      </Link>
     </div>
   );
 }
